@@ -64,7 +64,7 @@ class calc {
             } else if (i > 50) {
                 result = result + "L";
                 i = i - 50;
-            } else if (i > 10) {
+            } else if (i >= 10) {
                 result = result + "X";
                 i = i - 10;
             } else if (i == 9) {
@@ -177,12 +177,24 @@ class calc {
             throw new Exception("либо римские либо арабские, по другому нельзя");
         }
 
+        a = Integer.parseInt(splited[0]);
+        b = Integer.parseInt(splited[2]);
+        if (a>10)
+        {
+            throw new Exception("неверно введено значение!");
+        }
+        if (b>10)
+        {
+            throw new Exception("неверно введено значение!");
+        }
+
+
 
     }
 
 
 }
-    System.out.println("введите желаемую операцию в виде: 1 + 2, II * V");
+    System.out.println("введите желаемую операцию в виде: 1 + 2, II * V; значения не должны превышать 10");
     Scanner console = new Scanner(System.in);
     String input = console.nextLine();
     calc.problemCheck(input);
